@@ -1,4 +1,5 @@
 import { Menu } from "../../components/Common/Menu"
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Home = () => {
 
