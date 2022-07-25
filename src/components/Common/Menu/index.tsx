@@ -4,6 +4,7 @@ import loginIcon from "../../../../src/utils/icons/login-icon.png";
 import taskIcon from "../../../../src/utils/icons/task-icon.png";
 import usersIcon from "../../../../src/utils/icons/users-icon.png";
 import categoriesIcon from "../../../../src/utils/icons/categories-icon.png";
+import { NavLink } from 'react-router-dom';
 
 const Menu = () => {
 
@@ -14,22 +15,22 @@ const Menu = () => {
         <Navbar.Brand>To do App</Navbar.Brand>
         <Container className='d-flex flex-column'> 
           <Nav className="d-flex flex-column"> 
-              <Nav.Link>
-                <Image src={loginIcon} className="nav-icon me-2"/>
-                 Login
-              </Nav.Link>   
-              <Nav.Link>
-                <Image src={taskIcon} className="nav-icon me-2"/>
-                Tasks
-              </Nav.Link>
-              <Nav.Link>
+              <NavLink to="/login" className="nav-item">
+                  <Image src={loginIcon} className="nav-icon me-2"/>
+                  Login
+              </NavLink>
+              <NavLink to="/tasks" className="nav-item">
+                  <Image src={taskIcon} className="nav-icon me-2"/>
+                  Tasks
+              </NavLink>
+              <NavLink to="/users" className="nav-item">
                 <Image src={usersIcon} className="nav-icon me-2"/>
                 Users
-              </Nav.Link>
-              <Nav.Link>
+              </NavLink>
+              <NavLink to="/categories" className="nav-item">
                 <Image src={categoriesIcon} className="nav-icon me-2"/>
                 Categories
-              </Nav.Link>
+              </NavLink>
           </Nav>
       </Container>
     </Navbar>
