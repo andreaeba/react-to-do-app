@@ -1,6 +1,6 @@
 import { Container, Navbar, Nav, Image } from 'react-bootstrap';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import loginIcon from "../../../../src/utils/icons/login-icon.png";
+import loginIcon from "../../../utils/icons/login-icon.png"
 import taskIcon from "../../../../src/utils/icons/task-icon.png";
 import usersIcon from "../../../../src/utils/icons/users-icon.png";
 import categoriesIcon from "../../../../src/utils/icons/categories-icon.png";

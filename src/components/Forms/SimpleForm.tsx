@@ -30,6 +30,7 @@ type Props = {
 const SimpleForm: FC<Props> = ({children, className, labelName, type, placeholder}) => {
 
     return(
+        <Container>
             <Form className='content-main'>
                 <FormGroup>
                     <FormLabel>
@@ -45,8 +46,9 @@ const SimpleForm: FC<Props> = ({children, className, labelName, type, placeholde
                     Submit
                 </Button>
             </Form>
+        </Container>
     )
 
 }
 
-export { SimpleForm, SimpleFormBootstrap }
+// export { SimpleForm, SimpleFormBootstrap }

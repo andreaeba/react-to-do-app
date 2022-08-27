@@ -1,4 +1,4 @@
-import { ReactNode } from "react"
+import { FC, ReactNode } from "react"
 
 type Props = {
     children?: any,
@@ -17,7 +17,7 @@ const ContainerWrapper: FC<Props> = ({children, className}) => {
 
 }
 
-const MainContainer = ({children}) => {
+const MainContainer: FC<Props> = ({children}) => {
 
     return(
         <div className="main-container">
