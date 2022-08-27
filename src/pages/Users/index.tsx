@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom"
+import { Link, Outlet } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { Layout } from "../../components/Common/Layout"
 import { User } from "../../types"
@@ -32,12 +32,20 @@ const Users = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {users.map(user => {
+                        {users.map(user => {
                         return(
                             <tr key={user.id}>
                                 <td>{user.id}</td>
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
+                                <td>
+                                    <Link to={`/users/save/${user.id}`}>Edit
+                                    </Link>
+                                </td>
+                                <td>
+                                    <Link to={`/users/details/${user.id}`}>Details
+                                    </Link>
+                                </td>
                             </tr>
                         )
                     })}       

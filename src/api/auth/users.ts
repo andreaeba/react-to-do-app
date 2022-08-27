@@ -3,18 +3,18 @@ import { User, UserPayload } from '../../types'
 
 
 
-const add = (user: UserPayload) => {
+// const add = (user: UserPayload) => {
 
-    const options: RequestInit = {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(user)
-    }
+//     const options = {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify(user)
+//     }
 
-    fetch('https://to-do-august22-default-rtdb.firebaseio.com/users.json', options)
-}
+//     fetch('https://to-do-august22-default-rtdb.firebaseio.com/users.json', options)
+// }
 
 const getAll = async (): Promise<User[]> => {
     // get
@@ -26,14 +26,28 @@ const getAll = async (): Promise<User[]> => {
 
 }
 
-const get = async (id: string): Promise<User[]> => {
+// const get = async (id: string): Promise<User[]> => {
 
-    const response = await fetch(`https://to-do-august22-default-rtdb.firebaseio.com/users/${id}.json`)
+//     const response = await fetch(`https://to-do-august22-default-rtdb.firebaseio.com/users/${id}.json`)
     
-    const data = await response.json()
+//     const data = await response.json()
 
-    return data
+//     return data
 
+// }
+
+const saveUser = async (user: UserPayload, id: string | undefined) => {
+
+    const options = {
+        method: id ? 'PATCH' : 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(user)
+    }
+    
+    await fetch(`https://to-do-august22-default-rtdb.firebaseio.com/users/${id}.json`, options)
+    
 }
 
 // const remove = () => {
@@ -44,4 +58,4 @@ const get = async (id: string): Promise<User[]> => {
 //     // update
 // }
 
-export const usersApi = { add, getAll, get }
+export const usersApi = { getAll, saveUser }

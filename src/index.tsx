@@ -7,6 +7,7 @@ import { ContainerWrapper } from './components/Common/MainContainer';
 import { AddUser } from './pages/AddUser'
 import { SignUp } from './pages/SignUp';
 import { Users } from './pages/Users';
+import { SaveUser } from './pages/SaveUser';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -22,11 +23,10 @@ root.render(
 
            <Route path='/users' element={<Outlet />}>
               <Route index element={<Users />} />
-              <Route path='add' element={<AddUser />} />
-              <Route path='edit' element={<div>Edit user</div>} />
-              <Route path='edit/:id' element={<div>Edit user</div>} />
+              <Route path='save' element={<SaveUser />} />
+              <Route path='save/:id' element={<SaveUser />} />
               <Route path='details' element={<div>Details user</div>} />
-              <Route path='details/:id' element={<div>Details user</div>} />
+              <Route path='details/:id' element={<SaveUser />} />
               <Route path='delete' element={<div>Delete user</div>} />
               <Route path='delete/:id' element={<div>Delete user</div>} />
            </Route>

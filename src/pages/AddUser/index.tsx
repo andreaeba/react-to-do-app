@@ -1,7 +1,7 @@
 import { Form, Button, FormControl, FormLabel, FormGroup, Container } from 'react-bootstrap';
 import { MainContainer } from "../../components/Common/MainContainer"
 import { FormEvent, useState } from "react"
-import { AuthApi } from '../../api/auth/users';
+import { AuthApi, usersApi } from '../../api/auth/users';
 import { Layout } from '../../components/Common/Layout';
 import { Outlet } from 'react-router-dom';
 import { User, UserPayload } from '../../types';
@@ -13,7 +13,7 @@ const AddUser = (user: User) => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [pass, setPass] = useState('')
-    const [pass2, setPass2] = useState('')
+    // const [pass2, setPass2] = useState('')
 
 
     const handleSubmit = (e: {preventDefault: () => void}) => {
@@ -21,7 +21,7 @@ const AddUser = (user: User) => {
 
         const user = {name, email, pass}
 
-        AuthApi.add(user)
+        usersApi.add(user)
 
         console.log(user)
     }
@@ -74,12 +74,12 @@ const AddUser = (user: User) => {
                         <FormLabel htmlFor='pass2'>
                             Repeat password
                         </FormLabel>
-                        <FormControl 
+                        {/* <FormControl 
                             className='my-2' 
                             type='pass2' 
                             value={pass}
                             onChange={(e) => {setPass(e.target.value)}}>                
-                        </FormControl>
+                        </FormControl> */}
                     </FormGroup>
 
                     <Button variant="primary" type="submit">
